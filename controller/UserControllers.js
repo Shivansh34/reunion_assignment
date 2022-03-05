@@ -6,12 +6,13 @@ const ErrorResponse = require('../utils/errorResponse');
 exports.getuser= async(req,res,next)=>{
     try {
         res.status(200).json({
-            success:true,
-            user:{
+            success: true,
+            user: {
                 username: req.user.username,
                 followersSize: req.user.followers.length,
                 followingSize: req.user.following.length
             }
+            id: req.user._id,
         })
     } catch (error) {
         next(error);
