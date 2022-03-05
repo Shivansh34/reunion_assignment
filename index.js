@@ -23,9 +23,9 @@ app.use("/api", authRoutes);
 app.use("/api", privateRoutes);
 
 // app.use(express.static("build"));
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(path.resolve('./'), "frontend" ,"build", "index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.status(200).json({"message":"status running"});
+});
 
 app.use(errorHandler);
 

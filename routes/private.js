@@ -6,14 +6,14 @@ const {protect} = require('../middleware/auth');
 
 router.post('/follow/:id',protect,follow);
 router.post('/unfollow/:id',protect,unfollow);
-router.post('/user',protect,getuser);
+router.get('/user',protect,getuser);
 router.post('/posts',protect,post);
-router.post('/posts/:id',protect,getPostbyId);
+router.get('/posts/:id',protect,getPostbyId);
 router.delete('/posts/:id',protect,deletePostbyId);
 router.post('/comment/:id',protect,comment);
 router.post('/like/:id',protect,likebyId);
 router.post('/unlike/:id',protect,unlikebyId);
-router.post('/all_posts',protect,getAllPosts);
+router.get('/all_posts',protect,getAllPosts);
 
 
 module.exports= router;
