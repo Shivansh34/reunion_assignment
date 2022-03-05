@@ -11,8 +11,8 @@ exports.getuser= async(req,res,next)=>{
                 username: req.user.username,
                 followersSize: req.user.followers.length,
                 followingSize: req.user.following.length
-            }
-            id: req.user._id,
+            },
+            id: req.user._id
         })
     } catch (error) {
         next(error);
